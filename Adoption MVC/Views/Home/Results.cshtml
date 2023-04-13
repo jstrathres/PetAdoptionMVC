@@ -1,0 +1,39 @@
+﻿@model Animal
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<p>RESULTS</p>
+
+
+@foreach (var animal in ViewBag.Animals)
+{
+    <div>
+        <img src="@animal.Img" alt="@animal.Name" width="200" height="200" />
+        <h2>@animal.Name</h2>
+    </div>
+}
+
+@*<form method="post" action="/Home/AdoptAnimal/@Model.Id">
+    <button type="submit" name="id" value=" @Model.Id">Adopt</button>
+</form>*@
+@{
+    //foreach(Animal a in Model)
+    //{   
+    //    <p>
+    //    <a asp-action="Results" asp-route-breed="@a.Breed">@a.Breed</a>
+    //    </p>
+    //}
+    //foreach(Animal a in Model)
+    //{
+    //    <a asp-action="AnimalDetails" asp-route-id="@a.Id">
+    //    <div class="card">
+    //    <p>@a.Name</p>
+    //    <p>@a.Breed</p>
+    //    </div>
+    //    </a>
+    //}
+
+
+}

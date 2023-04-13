@@ -1,0 +1,36 @@
+﻿@model List<Animal>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1 class="text-center">Joshua's Pet Sanctuary</h1>
+
+<h2 class="text-center">Please choose a category</h2>
+<form method="post" action="/Home/Results">
+    <label for="breed">Select a breed:</label>
+    <select id="breed" name="breed">
+        <option value="Beagle">Beagle</option>
+        <option value="Lab">Lab</option>
+        <option value="PitBull">Pit Bull</option>
+        <option value="Boxer Bulldog">Boxer Bulldog</option>
+    </select>
+    <button type="submit">Search</button>
+</form>
+
+
+@{
+    foreach(Animal a in Model)
+    {
+        <a asp-action="AnimalDetails" asp-route-id="@a.Id">
+        <div class="card">
+        <p>@a.Name</p>
+        <p>@a.Breed</p>    
+        </div>
+        </a>
+        <form method="post" action="/Home/AdoptAnimal/@a.Id">
+            <button type="submit">Delete</button>
+        </form>
+    }
+
+
+}
+
