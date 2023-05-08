@@ -23,13 +23,14 @@ namespace Adoption_MVC.Controllers
             return View(result);
         }
 
+        public IActionResult AddAnimal()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult AddAnimal(Animal a)
         {
-            a.Name = " ";
-            a.Age = 0;
-            a.Breed = " ";
-            a.Description= " ";
-
             dbContext.Animals.Add(a);
             dbContext.SaveChanges();
             return RedirectToAction("Index");
@@ -59,10 +60,6 @@ namespace Adoption_MVC.Controllers
         }
 
         [HttpPost]
-        //public IActionResult Results(string breed)
-        //{
-        //    return dbContext.Animals.Where(a => a.Breed.ToLower().Trim() == breed.ToLower().Trim().ToList();
-        //}
         public IActionResult Results(string breed)
         {
             var animals = dbContext.Animals.Where(a => a.Breed.ToLower().Trim() == breed.ToLower().Trim()).ToList();

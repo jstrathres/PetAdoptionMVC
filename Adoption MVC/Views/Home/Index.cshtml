@@ -9,7 +9,9 @@
     <label for="breed">Select a breed:</label>
     <select id="breed" name="breed">
         <option value="Beagle">Beagle</option>
+        <option value="Pug">Pug</option>
         <option value="Lab">Lab</option>
+        <option value="Mixed">Mixed</option>
         <option value="PitBull">Pit Bull</option>
         <option value="Boxer Bulldog">Boxer Bulldog</option>
     </select>
@@ -27,10 +29,12 @@
         </div>
         </a>
         <form method="post" action="/Home/AdoptAnimal/@a.Id">
-            <button type="submit">Delete</button>
+            <button type="submit">Adopt!</button>
         </form>
     }
 
-
+    <a asp-action ="AddAnimal">
+    <button type="button">Add Animal</button>
+    </a>
 }
 

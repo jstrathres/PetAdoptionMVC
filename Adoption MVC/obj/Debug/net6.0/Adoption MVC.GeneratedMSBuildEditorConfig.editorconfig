@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\jstra\source\repos\Adoption MVC\Adoption MVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/jstra/source/repos/Adoption MVC/Adoption MVC/Views/Home/AddAnimal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRBbmltYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/jstra/source/repos/Adoption MVC/Adoption MVC/Views/Home/AnimalDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbmltYWxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,10 +1,11 @@
 ﻿@model Animal
 
 <h1>@Model.Name</h1>
-<img src="@Model.Img"></img>
+<img src="@Model.Img" height="500"></img>
 <p>@Model.Breed</p>
 <p>@Model.Description</p>
 <p>@Model.Age</p>
+
 
 <form method="post" action="/Home/AdoptAnimal/@Model.Id">
     <button type="submit" name="id" value=" @Model.Id">Adopt Me</button>
