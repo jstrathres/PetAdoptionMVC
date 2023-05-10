@@ -59,6 +59,11 @@ namespace Adoption_MVC.Controllers
             return View();
         }
 
+        public IActionResult Testimonials()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Results(string breed)
         {
