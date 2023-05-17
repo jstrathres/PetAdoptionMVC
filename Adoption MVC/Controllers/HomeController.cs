@@ -20,6 +20,7 @@ namespace Adoption_MVC.Controllers
         public IActionResult Index()
         {
             List<Animal> result= dbContext.Animals.ToList();
+            ViewBag.AdoptionMessage = TempData["AdoptionMessage"] as string;
             return View(result);
         }
 
@@ -35,7 +36,7 @@ namespace Adoption_MVC.Controllers
             dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
-
+       
         public IActionResult AdoptAnimal(int Id)
         {
             Animal a = dbContext.Animals.FirstOrDefault(a => a.Id == Id);
@@ -43,6 +44,8 @@ namespace Adoption_MVC.Controllers
             {
               dbContext.Remove(a);
               dbContext.SaveChanges();
+
+                TempData["AdoptionMessage"] = $"Congratulations! You have adopted {a.Name}!";
             }
             
             return RedirectToAction("Index");

@@ -4,6 +4,17 @@
 }
 <h1 class="text-center">Joshua's Pet Sanctuary</h1>
 
+@{
+    if (!string.IsNullOrEmpty(ViewBag.AdoptionMessage))
+    {
+        <div class="alert alert-success">
+            @ViewBag.AdoptionMessage
+        </div>
+    }
+}
+
+
+
 <h2 class="text-center">Creating Forever Homes All Around the US</h2>
 <form method="post" action="/Home/Results">
     <label for="breed">Select a breed:</label>
