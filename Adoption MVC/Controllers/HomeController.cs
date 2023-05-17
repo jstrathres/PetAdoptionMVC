@@ -16,11 +16,14 @@ namespace Adoption_MVC.Controllers
             _logger = logger;
         }
 
-
-        public IActionResult Index()
+        public IActionResult Index()//CONTROLLER
         {
+            //MODEL
             List<Animal> result= dbContext.Animals.ToList();
+
             ViewBag.AdoptionMessage = TempData["AdoptionMessage"] as string;
+
+            //VIEWER
             return View(result);
         }
 
@@ -45,9 +48,8 @@ namespace Adoption_MVC.Controllers
               dbContext.Remove(a);
               dbContext.SaveChanges();
 
-                TempData["AdoptionMessage"] = $"Congratulations! You have adopted {a.Name}!";
+              TempData["AdoptionMessage"] = $"Congratulations! You have adopted {a.Name}!";
             }
-            
             return RedirectToAction("Index");
         }
 
@@ -86,7 +88,6 @@ namespace Adoption_MVC.Controllers
             ViewBag.Breed = breed;
             return View();
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
