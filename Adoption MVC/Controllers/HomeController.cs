@@ -61,7 +61,18 @@ namespace Adoption_MVC.Controllers
 
         public IActionResult Testimonials()
         {
-            return View();
+            List<Testimonial> testimonials = dbContext.Testimonials.ToList();
+            return View(testimonials);
+        }
+
+        [HttpPost]
+        public IActionResult AddTestimonial(Testimonial t)
+        {
+            t.DateTimeColumn= DateTime.Now;
+
+            dbContext.Testimonials.Add(t);
+            dbContext.SaveChanges();
+            return RedirectToAction("Testimonials");
         }
 
         [HttpPost]
