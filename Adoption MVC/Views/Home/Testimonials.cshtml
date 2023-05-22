@@ -6,14 +6,20 @@
 <form asp-action="AddTestimonial">
     <p>Tell us your name: </p>
     <input type="text" name="Owner"/>
+    <p></p>
     <p>Tell us your pet's name:'</p>
     <input type="text" name="PetName"/>
+    <p></p>
     <p>Pet Breed:</p>
     <input type="text" name="Breed" />
+    <p></p>
     <p>Tell us your story: </p>
     <input type="text" name="Description" />
     <input type="submit" />
+    <p></p>
 </form>
+
+
 
 @{
     var testimonialReversed = Model.OrderByDescending(t => t.DateTimeColumn);

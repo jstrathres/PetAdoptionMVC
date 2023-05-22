@@ -2,7 +2,21 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+@*<head>
+    <style>
+        body {
+            background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Foercommons.s3.amazonaws.com%2Fmedia%2Fcourseware%2Flesson%2Fimage%2FPets_LDDMenw.jpg&f=1&nofb=1&ipt=6f3ed8eeba1213509417b73eb3f0c0d3166d0575aae524cf173ed177f17a59a9&ipo=images");
+            background-repeat: no-repeat;
+            /*background-size: cover;*/
+        }
+    </style>
+</head>*@
+
 <h1 class="text-center">Joshua's Pet Sanctuary</h1>
+
+<div style="text-align:center">
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Foercommons.s3.amazonaws.com%2Fmedia%2Fcourseware%2Flesson%2Fimage%2FPets_LDDMenw.jpg&f=1&nofb=1&ipt=6f3ed8eeba1213509417b73eb3f0c0d3166d0575aae524cf173ed177f17a59a9&ipo=images" style= "border-radius: 50%;" />
+</div>
 
 @{
     if (!string.IsNullOrEmpty(ViewBag.AdoptionMessage))
@@ -12,6 +26,7 @@
         </div>
     }
 }
+
 
 <h2 class="text-center">Creating Forever Homes All Around the World</h2>
 <form method="post" action="/Home/Results">
@@ -27,6 +42,7 @@
             <option value="Other">Other</option>
     </select>
     <button type="submit">Search</button>
+    <p></p>
 </form>
 
 <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; justify-items: center;">
@@ -34,7 +50,7 @@
     foreach(Animal a in Model)
     {
         <div style="display:grid; grid-template-areas: 'img' 'name' 'button';">  
-            <a style="text-decoration:none;"asp-action="AnimalDetails" asp-route-id="@a.Id">
+            <a style="text-decoration:none; color:black; "asp-action="AnimalDetails" asp-route-id="@a.Id">
             <img style="grid-area:img;" src="@a.Img" height="100" width="auto" alt="@a.Img">
             <p style="grid-area:name;">@a.Name</p>
             <p style="grid-area:breed;">@a.Breed</p>    
@@ -52,7 +68,7 @@
     <p>Do you have a furry friend in need of adoption?  Please fill out our simple form to add your friend to our pool of best friends!  </p>
     <a asp-action="AddAnimal">
 
-        <button type="button">Add Animal</button>
+        <button type="button">Add Friend</button>
     </a>
 </div>
 
